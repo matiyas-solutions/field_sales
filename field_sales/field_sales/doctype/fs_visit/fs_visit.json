@@ -1,0 +1,278 @@
+{
+ "actions": [],
+ "autoname": "field:client_id",
+ "creation": "2026-10-30 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_id",
+  "outlet",
+  "outlet_name",
+  "company",
+  "territory",
+  "purpose",
+  "status",
+  "section_check_in",
+  "check_in_time",
+  "check_in_lat",
+  "check_in_lng",
+  "check_in_accuracy_m",
+  "column_break_check_in",
+  "check_in_distance_m",
+  "check_in_mocked",
+  "location_flagged",
+  "check_in_photo",
+  "section_check_out",
+  "check_out_time",
+  "check_out_lat",
+  "check_out_lng",
+  "column_break_check_out",
+  "duration_minutes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client ID",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Outlet",
+   "options": "Customer",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "outlet.customer_name",
+   "fieldname": "outlet_name",
+   "fieldtype": "Data",
+   "label": "Outlet Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "outlet.fs_distributor",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Distributor",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "outlet.territory",
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Purpose",
+   "options": "Order Booking\nStock Audit\nCollection\nMerchandising\nRelationship\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nCompleted\nAuto Closed"
+  },
+  {
+   "fieldname": "section_check_in",
+   "fieldtype": "Section Break",
+   "label": "Check-in"
+  },
+  {
+   "fieldname": "check_in_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Check-in Time",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "check_in_lat",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "7",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "check_in_lng",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "7",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "check_in_accuracy_m",
+   "fieldtype": "Float",
+   "label": "Accuracy (m)",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_check_in",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Calculated by the server.",
+   "fieldname": "check_in_distance_m",
+   "fieldtype": "Float",
+   "label": "Distance from Outlet (m)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "check_in_mocked",
+   "fieldtype": "Check",
+   "label": "Mock Location Detected",
+   "set_only_once": 1
+  },
+  {
+   "description": "Beyond the check-in radius, or a mock location.",
+   "fieldname": "location_flagged",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Location Flagged",
+   "read_only": 1
+  },
+  {
+   "fieldname": "check_in_photo",
+   "fieldtype": "Attach Image",
+   "label": "Check-in Photo",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "section_check_out",
+   "fieldtype": "Section Break",
+   "label": "Check-out"
+  },
+  {
+   "fieldname": "check_out_time",
+   "fieldtype": "Datetime",
+   "label": "Check-out Time"
+  },
+  {
+   "fieldname": "check_out_lat",
+   "fieldtype": "Float",
+   "label": "Latitude",
+   "precision": "7"
+  },
+  {
+   "fieldname": "check_out_lng",
+   "fieldtype": "Float",
+   "label": "Longitude",
+   "precision": "7"
+  },
+  {
+   "fieldname": "column_break_check_out",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Calculated by the server.",
+   "fieldname": "duration_minutes",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Duration (min)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-30 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Field Sales",
+ "name": "FS Visit",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "National Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Zonal Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Area Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Officer",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "if_owner": 1,
+   "read": 1,
+   "role": "Sales Representative",
+   "write": 1
+  }
+ ],
+ "sort_field": "check_in_time",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "outlet_name",
+ "track_changes": 1
+}

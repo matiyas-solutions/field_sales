@@ -1,0 +1,28 @@
+[project]
+name = "field_sales"
+authors = [
+    { name = "Field Sales Contributors" }
+]
+description = "Field sales and secondary sales management for ERPNext: GPS visits, outlet stock, competitor activity and scheme tracking."
+requires-python = ">=3.14"
+readme = "README.md"
+license = { text = "MIT" }
+dynamic = ["version"]
+dependencies = [
+    # frappe and erpnext are installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0,<17.0.0"
+erpnext = ">=16.0.0,<17.0.0"
+
+[tool.ruff]
+line-length = 110
+target-version = "py314"
+
+[tool.ruff.format]
+indent-style = "tab"

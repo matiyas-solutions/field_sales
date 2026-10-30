@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "creation": "2026-10-30 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "geofence_radius_m",
+  "auto_close_after_hours",
+  "notify_low_stock"
+ ],
+ "fields": [
+  {
+   "default": "200",
+   "description": "Check-ins farther than this from the outlet are flagged.",
+   "fieldname": "geofence_radius_m",
+   "fieldtype": "Float",
+   "label": "Check-in Radius (m)",
+   "reqd": 1
+  },
+  {
+   "default": "24",
+   "description": "0 turns this off.",
+   "fieldname": "auto_close_after_hours",
+   "fieldtype": "Int",
+   "label": "Auto-close Open Visits After (hours)"
+  },
+  {
+   "default": "1",
+   "description": "Sends an alert to the Area Sales Managers and Sales Officers covering the outlet.",
+   "fieldname": "notify_low_stock",
+   "fieldtype": "Check",
+   "label": "Notify Managers of Low Stock"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-30 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Field Sales",
+ "name": "FS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "National Sales Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Zonal Sales Manager"
+  },
+  {
+   "read": 1,
+   "role": "Regional Sales Manager"
+  },
+  {
+   "read": 1,
+   "role": "Area Sales Manager"
+  },
+  {
+   "read": 1,
+   "role": "Sales Officer"
+  },
+  {
+   "read": 1,
+   "role": "Sales Representative"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

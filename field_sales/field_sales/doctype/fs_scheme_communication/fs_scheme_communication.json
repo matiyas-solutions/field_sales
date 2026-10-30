@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "autoname": "field:client_id",
+ "creation": "2026-10-30 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_id",
+  "visit",
+  "outlet",
+  "outlet_name",
+  "company",
+  "territory",
+  "scheme",
+  "communicated_on",
+  "section_response",
+  "response",
+  "remarks",
+  "follow_up_action",
+  "follow_up_date",
+  "follow_up_done"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client ID",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "visit",
+   "fieldtype": "Link",
+   "label": "Visit",
+   "options": "FS Visit",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Outlet",
+   "options": "Customer",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "outlet.customer_name",
+   "fieldname": "outlet_name",
+   "fieldtype": "Data",
+   "label": "Outlet Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "outlet.fs_distributor",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Distributor",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "outlet.territory",
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "scheme",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Scheme",
+   "options": "FS Scheme",
+   "reqd": 1
+  },
+  {
+   "fieldname": "communicated_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Communicated On",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "section_response",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Retailer Response",
+   "options": "Accepted\nInterested\nNeeds Follow-up\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "follow_up_action",
+   "fieldtype": "Data",
+   "label": "Follow-up Action"
+  },
+  {
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Follow-up Date"
+  },
+  {
+   "fieldname": "follow_up_done",
+   "fieldtype": "Check",
+   "label": "Follow-up Done"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-30 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Field Sales",
+ "name": "FS Scheme Communication",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "National Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Zonal Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Area Sales Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Officer",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "if_owner": 1,
+   "read": 1,
+   "role": "Sales Representative",
+   "write": 1
+  }
+ ],
+ "sort_field": "communicated_on",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "outlet_name",
+ "track_changes": 1
+}
